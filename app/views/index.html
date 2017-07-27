@@ -1,0 +1,46 @@
+<div id="c_index" ng-init="init()">
+	<div class="container" style="height:100%;min-height:500px;">
+		<div class=" nav text-center" style="margin-top: 14em;">
+
+			<div class="row">
+				<div class="col-xs-2 col-md-1">
+
+				</div>
+				<div class="col-xs-8 col-md-10">
+
+					<div class="row">
+						<div class="col-xs-2 col-md-1">
+
+						</div>
+						<div class="col-xs-8 col-md-10">
+
+							<div class="span3 col-xs-10">
+								<input type="text" value="" placeholder="公司名称" class="span3" style="width:100% ; min-height: 55px;font-size: x-large;" ng-model="serachKey" ng-change="serachCahnge()">
+								<ul style="position: relative;left: 0;display: block;float: left;margin: 0 10px 0 0;background-color: #34495e; width: 100%;">
+									<li class="company_s_item" style="position: relative;line-height: 20px;    display: list-item;text-align: -webkit-match-parent;" ng-repeat="item in holderArr" ng-click="choseCompany(item)"> 
+										<span style="border-radius: 2px;color: white;display: block;font-size: 14px;padding: 6px 9px;text-decoration: none;    text-align: left;">{{item.Name}}</span>
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="btn btn-success col-xs-2" style="height: 3.4em;line-height: 2.5em;">查询</a>
+						</div>
+						<div class="col-xs-2 col-md-1">
+
+						</div>
+					</div>
+
+				</div>
+				<div class="col-xs-2 col-md-1">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(function () {
+		// Custom selects
+		// $("select").dropkick();
+	});
+
+</script>

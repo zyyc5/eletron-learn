@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app="ieasy360">
+<head>
+<title>云膳智慧餐饮</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+     <script src="./res/js/jquery-2.0.0.min.js"></script>
+    <!-- <script src="./res/js/bootstrap.min.js"></script>
+    <link href="./res/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./res/css/bootflat.css" rel="stylesheet" media="screen">
+    <link href="./res/css/bf-frame.css" rel="stylesheet" media="screen">
+    <link href="./res/css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
+<script text="text/javascript" src="res/jslib/jsloader.js"></script>
+<script>
+    var __CONFIG_SLICE__ = "dev"; // "dev" or "production"
+
+
+    //process.env.UV_THREADPOOL_SIZE = 10;
+	
+	//******下面js的加载顺序很重要,切勿随意更换位置
+    JSLoader.loadStyleSheet("./res/bootflat/css/bootstrap.min.css");
+    JSLoader.loadStyleSheet("http://www.bootcss.com/p/flat-ui/css/flat-ui.css");
+	JSLoader.loadStyleSheet("./res/font-awesome/css/font-awesome.min.css");
+
+	JSLoader.loadStyleSheet("./res/css/jquery-ui.min.css");
+	JSLoader.loadStyleSheet("./res/css/bootstrap-select.min.css");
+	JSLoader.loadStyleSheet("./res/jslib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css");
+	JSLoader.loadStyleSheet("./res/jslib/bootstrap-datetimepicker/css/bootstrap-switch.min.css");
+	JSLoader.loadStyleSheet("./res/css/style.css");
+	JSLoader.loadStyleSheet("./res/css/masker.css");
+	// JSLoader.loadJavaScript("./res/bootflat/js/jquery-1.10.1.min.js");
+	JSLoader.loadJavaScript("./res/jslib/jquery-ui.min.js");
+	JSLoader.loadJavaScript("./res/bootflat/js/site.min.js");
+	JSLoader.loadJavaScript("./res/jslib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js");
+	JSLoader.loadJavaScript("./res/jslib/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js");
+	JSLoader.loadJavaScript("./res/jslib/bootstrap-datetimepicker/js/locales/bootstrap-switch.min.js");
+	JSLoader.loadJavaScript("./res/jslib/sha.js");
+	JSLoader.loadJavaScript("./res/jslib/async.js");
+	JSLoader.loadJavaScript("./res/jslib/uuid.js");
+  JSLoader.loadJavaScript("./res/jslib/bootstrap-select.min.js");
+
+	JSLoader.loadJavaScript("./res/jslib/angular/angular.js");
+	JSLoader.loadJavaScript("./res/jslib/angular/angular-route.min.js");
+	JSLoader.loadJavaScript("./res/jslib/angular/angular-ui-router.js");
+	JSLoader.loadJavaScript("./res/jslib/angular/angular-animate.min.js");
+	JSLoader.loadJavaScript("./res/jslib/angular/angular-messages.min.js");
+	JSLoader.loadJavaScript("./res/jslib/angular/angular-resource.min.js");
+	JSLoader.loadJavaScript("./res/jslib/angular/angular-touch.min.js");
+	JSLoader.loadJavaScript("./res/jslib/angular/angular-sanitize.min.js");
+	JSLoader.loadJavaScript("./res/jslib/md5-min.js");
+	JSLoader.loadJavaScript("./res/jslib/jquery-bootstrap-plugin.js");
+	JSLoader.loadJavaScript("./res/jslib/lodash.min.js");
+	JSLoader.loadJavaScript("./res/jslib/jquery-masker.js");
+	JSLoader.loadJavaScript("./res/jslib/jquery-confirm.js");
+	// JSLoader.loadJavaScript("config.js");
+	// JSLoader.loadJavaScript("config-"+__CONFIG_SLICE__+".js");
+  // JSLoader.loadJavaScript("config-android.js");
+  
+  JSLoader.loadJavaScript("config.js");
+  JSLoader.loadJavaScript("config-dev.js");
+  JSLoader.loadJavaScript("util/utils.js");
+  JSLoader.loadJavaScript("app.js");
+JSLoader.loadJavaScript("router.js");
+
+ JSLoader.loadJavaScript("service/qiChacha.js");
+
+  JSLoader.loadJavaScript("controller/index.js");
+  JSLoader.loadJavaScript("service/authService.js");
+
+	window.onload=function(){
+        document.getElementsByTagName("body")[0].onkeydown =function(){
+          
+            //获取事件对象
+            var elem = event.relatedTarget || event.srcElement || event.target ||event.currentTarget;
+
+            if(event.keyCode==8){//判断按键为backSpace键
+
+                    //获取按键按下时光标做指向的element
+                    var elem = event.srcElement || event.currentTarget;
+
+                    //判断是否需要阻止按下键盘的事件默认传递
+                    var name = elem.nodeName;
+
+                    if(name!='INPUT' && name!='TEXTAREA'){
+                        return _stopIt(event);
+                    }
+                    var type_e = elem.type.toUpperCase();
+                    if(name=='INPUT' && (type_e!='TEXT' && type_e!='TEXTAREA' && type_e!='PASSWORD' && type_e!='FILE')){
+                            return _stopIt(event);
+                    }
+                    if(name=='INPUT' && (elem.readOnly==true || elem.disabled ==true)){
+                            return _stopIt(event);
+                    }
+            }
+
+        }
+
+        //openWaimaiIframe();
+
+    }
+
+
+	function _stopIt(e){  
+			if(e.returnValue){  
+				e.returnValue = false ;  
+			}  
+			if(e.preventDefault ){  
+				e.preventDefault();  
+			}                 
+			return false;  
+	}  
+</script>
+</head>
+
+<body style="background-color:#ccc;" onselectstart="return false">
+	<div id="_rootElement" ng-view style="width:100%; height:100%;">
+
+
+  </div>
+    <!-- <div class="hide">
+        <iframe style="board:0;" id="waimaiIframe" width="100%" height="100%" frameBorder=0 scrolling=no></iframe>
+    </div>
+    <!--云餐厅frame-->
+    <!-- <div class="hide">
+        <iframe style="board:0;" id="wctIframe" width="100%" height="100%" frameBorder=0 scrolling=no></iframe>
+    </div>  -->
+</body>
+</html>

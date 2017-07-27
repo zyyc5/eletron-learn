@@ -1,0 +1,105 @@
+body,
+html {
+    font-family: "Microsoft YaHei";
+    height: 100%;
+    background: #31c37c
+}
+
+.company_s_item span:hover {
+background-color:#1abc9c;
+}
+
+* {
+    cursor: pointer;
+}
+
+input[type="button" ], input[type="submit"], input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+button {
+    background-color: rgb(221, 221, 221);
+}
+
+.form-control[readonly] {
+    background-color: white !important;
+}
+
+.main-wrap {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 100%;
+}
+
+.btn-success {
+    background-color: #31c37c;
+    border: 1px solid #31c37c;
+}
+
+.btn-success:hover, .btn-success:focus {
+    background-color: #40b376;
+    border: 1px solid #40b376;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.input-group-addon {
+    border-radius: 0;
+}
+
+a:link,
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+
+i {
+    font-style: normal;
+}
+
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+input[type=text]:focus,
+button:focus {
+    outline: none;
+}
+
+.btn:active:focus, .btn:focus {
+    outline-offset: 0;
+    outline: 0;
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+.pager {
+    color: #31c37c;
+    margin: 0;
+    line-height: 50px;
+}
+
+.pager:active {
+    color: #31c37c;
+}
+
+textarea {
+    resize: none;
+}
+
+.text-all {
+    color: black
+}
+
+.text-on {
+    color: #f3b51b;
+}
+
+.text-state-enable {
+    background: #ccc;
+}
